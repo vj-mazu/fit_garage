@@ -31,8 +31,8 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-black/90 backdrop-blur-xl py-4 border-b border-white/5' : 'bg-transparent py-8'
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ${
+        scrolled ? 'bg-black/95 backdrop-blur-2xl py-4 border-b border-white/5' : 'bg-transparent py-8'
       }`}
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between">
@@ -85,7 +85,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-black flex flex-col justify-center px-12 md:hidden"
+            className="fixed inset-0 z-[101] bg-black flex flex-col justify-center px-12 md:hidden"
           >
             <div className="flex flex-col gap-10">
               {navItems.map((item, index) => (
