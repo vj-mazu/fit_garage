@@ -61,7 +61,7 @@ export const Story = () => {
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.5, type: "spring" }}
-                className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 w-24 h-24 md:w-32 md:h-32 bg-[#FF4D00] rounded-full flex flex-col items-center justify-center shadow-2xl border-4 border-black"
+                className="absolute -top-6 -right-6 md:-top-8 md:-right-8 w-24 h-24 md:w-32 md:h-32 bg-[#FF4D00] rounded-full flex flex-col items-center justify-center shadow-2xl border-4 border-black z-10"
               >
                 <span className="text-[8px] md:text-[10px] font-black uppercase tracking-widest text-white/70">EST.</span>
                 <span className="text-xl md:text-2xl font-black italic text-white">2023</span>
