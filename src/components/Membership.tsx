@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Check, ArrowRight } from 'lucide-react';
 
 const corePlans = [
   { name: "One Year Warrior", price: "₹20,000", duration: "365 Days", desc: "The ultimate long-term commitment to your legacy.", tag: "Best Value" },
