@@ -19,7 +19,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen flex items-center overflow-hidden bg-black w-full">
+    <section className="relative h-screen flex flex-col justify-center pb-20 md:pb-32 overflow-hidden bg-black w-full">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -36,18 +36,19 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black" />
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-16">
-        <div className="max-w-4xl">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-16 mt-16 md:mt-0">
+        <div className="max-w-4xl mx-auto md:mx-0 text-center md:text-left flex flex-col items-center md:items-start">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col items-center md:items-start"
           >
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-[0.3em] text-white/80 mb-8"
+              className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-black uppercase tracking-[0.3em] text-white/80 mb-8 mx-auto md:mx-0"
             >
               <span className="w-2 h-2 rounded-full bg-[#FF4D00] animate-pulse" />
               Raichur's Elite Training Hub
@@ -76,7 +77,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
-              className="text-base md:text-2xl text-white/60 max-w-xl font-medium leading-relaxed mb-12 italic"
+              className="text-base md:text-2xl text-white/60 max-w-xl font-medium leading-relaxed mb-12 italic mx-auto md:mx-0"
             >
               Engineered for performance. Built for the dedicated. <br className="hidden md:block" />
               Experience the city's most powerful training floor.
@@ -86,17 +87,17 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-6"
+              className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-6 w-full sm:w-auto"
             >
               <button 
                 onClick={() => scrollToSection('#membership')}
-                className="btn-cult btn-cult-primary flex items-center justify-center gap-2 group text-xs md:text-sm"
+                className="btn-cult btn-cult-primary flex items-center justify-center gap-2 group text-xs md:text-sm w-full sm:w-auto"
               >
                 GET STARTED NOW <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
               </button>
               <button 
                 onClick={() => scrollToSection('#facility')}
-                className="btn-cult btn-cult-outline flex items-center justify-center gap-2 text-xs md:text-sm"
+                className="btn-cult btn-cult-outline flex items-center justify-center gap-2 text-xs md:text-sm w-full sm:w-auto"
               >
                 <Play size={16} fill="currentColor" /> EXPLORE THE GARAGE
               </button>
@@ -104,6 +105,7 @@ export const Hero = () => {
           </motion.div>
         </div>
       </div>
+
 
       {/* Stats Overlay */}
       <div className="absolute bottom-10 left-0 w-full px-6 md:px-16 flex flex-row items-end justify-between gap-4">
