@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #000000;
+    --fg: #FFFFFF;
+    --accent: #FF4D00; /* Energetic Fit Garage Orange */
+    --muted: #888888;
+  }
+
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-cult {
+    @apply px-10 py-4 rounded-xl font-extrabold text-sm uppercase tracking-wider transition-all duration-300;
+  }
+
+  .btn-cult-primary {
+    @apply bg-[#FF4D00] text-white hover:bg-[#FF6A00] hover:shadow-[0_0_30px_rgba(255,77,0,0.3)];
+  }
+
+  .btn-cult-outline {
+    @apply border-2 border-white/20 text-white hover:bg-white hover:text-black;
+  }
+
+  .glass-pill {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #FFFFFF, #FF4D00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
