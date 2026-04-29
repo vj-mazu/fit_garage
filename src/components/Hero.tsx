@@ -19,7 +19,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative h-screen flex flex-col justify-center pb-20 md:pb-32 overflow-hidden bg-black w-full">
+    <section className="relative min-h-[100dvh] flex flex-col justify-center pt-32 pb-32 overflow-hidden bg-black w-full">
       {/* Background Video */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
