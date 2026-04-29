@@ -1,6 +1,6 @@
 import { Instagram, MapPin, MessageCircle } from 'lucide-react';
 
-export const Footer = () => {
+export const Footer = ({ onPrivacyClick }: { onPrivacyClick?: () => void }) => {
   return (
     <footer id="footer" className="bg-black pt-32 pb-16 text-white border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8">
@@ -85,9 +85,9 @@ export const Footer = () => {
             Fit Garage Elite Performance Center © 2026
           </p>
           <div className="flex gap-10 text-[10px] font-black uppercase tracking-widest text-white/20">
-            <a href="#" onClick={(e) => { e.preventDefault(); alert('Privacy Policy: We protect your data and only use it for membership inquiries.'); }} className="hover:text-white">Privacy</a>
-            <a href="#" className="hover:text-white">Terms</a>
-            <a href="#" className="hover:text-white">Security</a>
+            <button onClick={onPrivacyClick} className="hover:text-white uppercase tracking-widest transition-colors">Privacy</button>
+            <a href="#" className="hover:text-white transition-colors">Terms</a>
+            <a href="#" className="hover:text-white transition-colors">Security</a>
           </div>
         </div>
       </div>
