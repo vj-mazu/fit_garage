@@ -21,6 +21,17 @@ const specializedPlans = [
 ];
 
 export const Membership = () => {
+  const getWhatsAppLink = (planName: string, price: string, duration?: string) => {
+    const baseUrl = "https://wa.me/919916245333";
+    const text = encodeURIComponent(
+      `Hi Fit Garage Raichur, I'm interested in joining the *${planName}* plan.\n\n` +
+      `*Details:* ${price}${duration ? ` for ${duration}` : ''}\n` +
+      `*Location:* Bresthwarpet Hub\n\n` +
+      `Please guide me with the next steps for registration.`
+    );
+    return `${baseUrl}?text=${text}`;
+  };
+
   return (
     <section id="membership" className="py-32 bg-black overflow-hidden border-t border-white/5">
       <div className="max-w-7xl mx-auto px-8">
@@ -67,7 +78,7 @@ export const Membership = () => {
                 </div>
                 <p className="text-white/50 text-sm font-medium mb-12 leading-relaxed">{plan.desc}</p>
                 <a 
-                  href={`https://wa.me/919916245333?text=Hi, I am interested in the ${plan.name} plan at Fit Garage.`}
+                  href={getWhatsAppLink(plan.name, plan.price, plan.duration)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full py-4 rounded-xl bg-white/10 border border-white/10 text-[10px] text-center font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all"
@@ -93,7 +104,7 @@ export const Membership = () => {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.05 }}
                 className="p-8 rounded-3xl bg-gradient-to-br from-white/5 to-transparent border border-white/5 hover:border-[#FF4D00]/30 transition-all group cursor-pointer"
-                onClick={() => window.open(`https://wa.me/919916245333?text=Hi, I am interested in ${plan.name} training.`, '_blank')}
+                onClick={() => window.open(getWhatsAppLink(plan.name, plan.price, plan.period), '_blank')}
               >
                 <p className="text-[9px] font-black uppercase tracking-[0.2em] text-[#FF4D00] mb-2">{plan.type}</p>
                 <h5 className="text-lg font-black italic uppercase mb-6 tracking-tight">{plan.name}</h5>
@@ -119,7 +130,7 @@ export const Membership = () => {
             </p>
           </div>
           <a 
-            href="https://wa.me/919916245333"
+            href={getWhatsAppLink("Membership", "General Inquiry")}
             target="_blank"
             rel="noopener noreferrer"
             className="px-10 py-5 rounded-full bg-[#FF4D00] text-white font-black text-xs uppercase tracking-widest hover:shadow-[0_0_40px_rgba(255,77,0,0.4)] transition-all"
