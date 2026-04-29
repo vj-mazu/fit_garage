@@ -10,7 +10,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-[#FF4D00] selection:text-white">
+    <div className="min-h-screen bg-black text-white selection:bg-[#FF4D00] selection:text-white overflow-x-hidden w-full relative">
       <Navbar />
       <main>
         <Hero />
