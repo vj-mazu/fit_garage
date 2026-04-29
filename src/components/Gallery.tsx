@@ -1,45 +1,51 @@
 import { motion } from 'framer-motion';
 
 const images = [
-  { src: "/assets/gym-1.png", title: "Strength Zone" },
-  { src: "/assets/gym-2.png", title: "Cardio Bay" },
-  { src: "/assets/gym-3.png", title: "Dumbbell Rack" },
-  { src: "/assets/gym-4.png", title: "Performance" },
-  { src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=2070", title: "Elite Facility" },
+  { src: "/assets/gym-1.png", size: "col-span-1 row-span-1 md:col-span-2 md:row-span-2", title: "Strength Lab" },
+  { src: "/assets/gym-2.png", size: "col-span-1 row-span-1", title: "Precision" },
+  { src: "/assets/gym-3.png", size: "col-span-1 row-span-1", title: "Cardio Bay" },
+  { src: "/assets/gym-4.png", size: "col-span-1 row-span-1 md:col-span-2", title: "Performance" },
 ];
 
 export const Gallery = () => {
   return (
-    <section id="gallery" className="py-32 bg-black overflow-hidden border-t border-white/5">
-      <div className="max-w-7xl mx-auto px-8">
-        <div className="mb-24">
-          <h2 className="text-6xl md:text-8xl font-black italic uppercase leading-[0.85] tracking-tighter mb-8">
-            VISUAL <br />
-            <span className="text-[#FF4D00]">POWER.</span>
+    <section id="gallery" className="py-20 md:py-32 bg-black">
+      <div className="max-w-7xl mx-auto px-6 md:px-8">
+        <div className="mb-16 md:mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="w-8 h-[2px] bg-[#FF4D00]" />
+            <span className="text-xs font-black uppercase tracking-[0.3em] text-[#FF4D00]">Visual Proof</span>
+          </motion.div>
+          <h2 className="text-5xl md:text-8xl font-black italic uppercase leading-[0.85] tracking-tighter">
+            THE <br />
+            <span className="text-white/20">ARENA.</span>
           </h2>
-          <p className="text-white/50 text-lg font-medium max-w-xl">
-            High-definition intensity. Experience the elite atmosphere that separates Fit Garage from the rest.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 auto-rows-[150px] md:auto-rows-[250px]">
           {images.map((img, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="relative aspect-video rounded-[2.5rem] overflow-hidden group border border-white/10"
+              className={`relative rounded-2xl md:rounded-[2.5rem] overflow-hidden group ${img.size}`}
             >
               <img 
                 src={img.src} 
-                alt={img.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-all duration-700" 
+                alt={img.title}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute bottom-8 left-8">
-                <p className="text-xl font-black italic uppercase text-white">{img.title}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+              <div className="absolute bottom-4 left-6 md:bottom-8 md:left-10">
+                <p className="text-[10px] md:text-xs font-black uppercase tracking-[0.3em] text-[#FF4D00] mb-1">{img.title}</p>
+                <p className="text-sm md:text-xl font-black italic uppercase tracking-tighter">FIT GARAGE HUB</p>
               </div>
             </motion.div>
           ))}
